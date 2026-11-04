@@ -1,0 +1,222 @@
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #233638;
+  --cor-texto-botao: #ffffff;
+  --cor-fundo-pagina: #f0e7e7;
+  --cor-principal: #d12828;
+  --cor-borda: #b3dbcf;
+  --cor-titulo: #1d7f8c;
+  --cor-painel: rgba(255, 255, 255, 0.92);
+  --cor-tipo: var(--cor-principal);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+main {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 0.8rem;
+  text-align: center;
+  background-color: var(--cor-fundo-pagina);
+  border: 2px solid var(--cor-borda);
+  border-radius: 20px;
+}
+
+.titulo-linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+h1 {
+  margin: 0;
+  color: var(--cor-titulo);
+}
+
+.icone {
+  width: 3rem;
+  height: 3rem;
+}
+
+[data-tipo="normal"]   { --cor-tipo: #9a9a8c; }
+[data-tipo="fire"]     { --cor-tipo: #f0642a; }
+[data-tipo="water"]    { --cor-tipo: #4a8fe8; }
+[data-tipo="electric"] { --cor-tipo: #e8b412; }
+[data-tipo="grass"]    { --cor-tipo: #4caf50; }
+[data-tipo="ice"]      { --cor-tipo: #5bc5c5; }
+[data-tipo="fighting"] { --cor-tipo: #c03028; }
+[data-tipo="poison"]   { --cor-tipo: #a040a0; }
+[data-tipo="ground"]   { --cor-tipo: #c9a645; }
+[data-tipo="flying"]   { --cor-tipo: #8e9ff0; }
+[data-tipo="psychic"]  { --cor-tipo: #f0508a; }
+[data-tipo="bug"]      { --cor-tipo: #8ca31a; }
+[data-tipo="rock"]     { --cor-tipo: #a38c21; }
+[data-tipo="ghost"]    { --cor-tipo: #6a4f91; }
+[data-tipo="dragon"]   { --cor-tipo: #5b3ae0; }
+[data-tipo="dark"]     { --cor-tipo: #5a4a40; }
+[data-tipo="steel"]    { --cor-tipo: #7a8aa0; }
+[data-tipo="fairy"]    { --cor-tipo: #e07ab0; }
+
+.card {
+  max-width: 22rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--cor-tipo);
+  border-radius: 16px;
+  transition: background-color 0.3s;
+}
+
+.imagem-pokemon {
+  --altura: 10rem;
+
+  display: block;
+  width: 100%;
+  height: var(--altura);
+  margin: 0 0 0.75rem;
+  padding: 0.5rem;
+  object-fit: contain;
+  image-rendering: pixelated;
+  background-color: var(--cor-painel);
+  border-radius: 12px;
+}
+
+.painel {
+  padding: 0.75rem 1rem;
+  background-color: var(--cor-painel);
+  border-radius: 12px;
+}
+
+h2 {
+  margin: 0.25rem 0 0.5rem;
+  text-transform: capitalize;
+}
+
+.tipos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tipo {
+  padding: 0.15rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  background-color: var(--cor-tipo);
+  border-radius: 999px;
+}
+
+.medidas {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #5b6b6d;
+}
+
+.status {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status li {
+  display: grid;
+  grid-template-columns: 5.5rem 2.5rem 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.status-valor {
+  font-weight: bold;
+  text-align: right;
+}
+
+.barra {
+  height: 0.5rem;
+  overflow: hidden;
+  background-color: #e3ecea;
+  border-radius: 999px;
+}
+
+.barra-cheia {
+  display: block;
+  height: 100%;
+  background-color: var(--cor-tipo);
+  border-radius: 999px;
+  transition: width 0.4s;
+}
+
+form,
+.navegacao {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 2px solid var(--cor-principal);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  min-height: 2.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--cor-texto-botao);
+  background-color: var(--cor-principal);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+@media (min-width: 48rem) {
+  form,
+  .navegacao {
+    flex-direction: row;
+  }
+
+  input {
+    flex: 1;
+    width: auto;
+  }
+
+  button {
+    flex-shrink: 0;
+  }
+}
