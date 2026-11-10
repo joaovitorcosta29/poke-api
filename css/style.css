@@ -23,6 +23,7 @@ body {
   line-height: 1.5;
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
+  user-select: none;
 }
 
 main {
@@ -102,6 +103,13 @@ h1 {
   padding: 0.4rem 0.7rem;
   background-color: var(--cor-painel);
   border-radius: 12px;
+}
+
+.mensagem {
+  font-weight: bold;
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: var(--cor-principal);
 }
 
 h2 {
@@ -218,3 +226,4 @@ button:hover {
 form button {
   flex-shrink: 0;
 }
+

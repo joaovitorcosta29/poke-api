@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokédex</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/party.css" />
   </head>
   <body>
     <main>
@@ -23,7 +24,7 @@
         />
         <button type="submit">Buscar</button>
       </form>
-
+      <p class="mensagem" hidden></p>
       <section class="card">
         <img alt="Imagem do Pokémon" class="imagem-pokemon" />
 
@@ -44,32 +45,44 @@
               <li>
                 <span>HP</span>
                 <span class="status-valor hp"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="hp"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="hp"></span
+                ></span>
               </li>
               <li>
                 <span>Ataque</span>
                 <span class="status-valor ataque"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="attack"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="attack"></span
+                ></span>
               </li>
               <li>
                 <span>Defesa</span>
                 <span class="status-valor defesa"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="defense"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="defense"></span
+                ></span>
               </li>
               <li>
                 <span>Atq. Esp.</span>
                 <span class="status-valor atq-esp"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="special-attack"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="special-attack"></span
+                ></span>
               </li>
               <li>
                 <span>Def. Esp.</span>
                 <span class="status-valor def-esp"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="special-defense"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="special-defense"></span
+                ></span>
               </li>
               <li>
                 <span>Velocidade</span>
                 <span class="status-valor velocidade"></span>
-                <span class="barra"><span class="barra-cheia" data-barra="speed"></span></span>
+                <span class="barra"
+                  ><span class="barra-cheia" data-barra="speed"></span
+                ></span>
               </li>
             </ul>
           </div>
@@ -78,9 +91,32 @@
 
       <div class="navegacao">
         <button type="button" class="botao-anterior">&lt; Anterior</button>
+        <button type="button" id="botao-capturar">Capturar</button>
         <button type="button" class="botao-proximo">Próximo &gt;</button>
       </div>
+
+      <section class="party">
+        <h2 id="titulo-party">Minha party (0/6)</h2>
+        <ul id="party" class="slots"></ul>
+      </section>
+
+      <section class="laboratorio">
+        <h2 id="titulo-carvalho">Com o Professor Carvalho (0)</h2>
+        <p id="carvalho-vazio" class="texto-suave">
+          Nenhum pokémon enviado ainda.
+        </p>
+        <ul id="carvalho"></ul>
+      </section>
     </main>
+
+    <dialog id="dialogo-troca" class="dialogo">
+      <h2>Sua party está cheia!</h2>
+      <p id="texto-troca"></p>
+      <ul id="opcoes-troca" class="slots"></ul>
+      <button type="button" id="cancelar-captura" class="botao-secundario">
+        Cancelar captura
+      </button>
+    </dialog>
 
     <script src="../js/poke.js"></script>
   </body>
